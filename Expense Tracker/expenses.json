@@ -4,5 +4,29 @@
         "description": "Dinner",
         "amount": 300.0,
         "date": "2026-06-19"
+    },
+    {
+        "id": 2,
+        "description": "Coffee",
+        "amount": 50.0,
+        "date": "2026-06-19"
+    },
+    {
+        "id": 3,
+        "description": "Coffee",
+        "amount": 50.0,
+        "date": "2026-06-19"
+    },
+    {
+        "id": 4,
+        "description": "food",
+        "amount": 50.0,
+        "date": "2026-06-19"
+    },
+    {
+        "id": 5,
+        "description": "reacharg0e",
+        "amount": 349.0,
+        "date": "2026-06-19"
     }
 ]

@@ -1,3 +1,4 @@
+import csv
 import json
 import os
 import sys
@@ -111,7 +112,17 @@ def summary_by_month(month):
 
     print(f"Total expenses for month {month}: ₹{total}")
 
+def json_to_csv():
+    expenses = load_expenses()
 
+# Write CSV file
+    with open("expennses.csv", "w", newline="") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=expenses[0].keys())
+
+        writer.writeheader()
+        writer.writerows(expenses)
+
+    print("JSON converted to CSV successfully!")
 def main():
     if len(sys.argv) < 2:
         print("Usage:")
@@ -169,7 +180,7 @@ def main():
     else:
         print("Invalid command")
 
-
+json_to_csv()
 if __name__ == "__main__":
     main()
 
