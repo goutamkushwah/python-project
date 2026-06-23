@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <body>
+    <div class="navbar">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Unit Convertor</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item">
+         <a class="nav-link active" href="{{ url_for('length') }}">Length</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="{{ url_for('weight') }}">Weight</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('temperature') }}">Temperature</a>
+        </li>
+        </form>
+    </div>
+  </div>
+</nav>
+</div>
+     <div class="container">
+    
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">
+                Enter Weight
+            </label>
+
+            <input
+                type="number"
+                step="any"
+                class="form-control"
+                name="value"
+                placeholder="Enter value"
+                required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                Convert From
+            </label>
+
+            <select class="form-select" name="from_unit" required>
+                <option value="milligram">Milligram (mg)</option>
+                <option value="gram">Gram (g)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+                <option value="ounce">Ounce (oz)</option>
+                <option value="pound">Pound (lb)</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">
+                Convert To
+            </label>
+
+            <select class="form-select" name="to_unit" required>
+                <option value="milligram">Milligram (mg)</option>
+                <option value="gram">Gram (g)</option>
+                <option value="kilogram">Kilogram (kg)</option>
+                <option value="ounce">Ounce (oz)</option>
+                <option value="pound">Pound (lb)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Convert
+        </button>
+
+    </form>
+
+    </div>
+     {% if result is not none %}
+<div class="alert alert-success mt-3">
+    <h4>Result: {{ result }}</h4>
+</div>
+{% endif %}
+    </body>
+
+{% endblock %}
